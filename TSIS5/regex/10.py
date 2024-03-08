@@ -4,5 +4,7 @@ file = open("./row.txt", 'r', encoding='utf8')
 
 text = file.read()
 
-print(re.findall(r'ab{2,3}', text))
+camel_case = input()
+
+print(re.sub(r'(?<!^)(?=[A-Z])', '_', camel_case).lower())
 file.close()
